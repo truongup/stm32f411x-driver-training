@@ -5,6 +5,19 @@
 
 #define __vo volatile
 
+/*	DEFINE VALUE SET & RESET	*/
+#define SET 			1
+#define RESET			0
+
+#define ENABLE			SET
+#define DISABLE			RESET
+
+#define GPIO_PIN_SET	SET
+#define GPIO_PIN_RESET	RESET
+
+#define FLAG_SET		SET
+#define FLAG_RESET		RESET
+
 /*	MEMORY ADDRESS DEFINE */
 #define FLASH_BASE_ADDR		0x08000000U		/* Flash address */
 #define SRAM1_BASE_ADDR		0x20000000U		/* SRAM address  */
