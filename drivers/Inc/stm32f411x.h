@@ -223,4 +223,76 @@ typedef struct {
 }SPI_Def_t;
 
 #define SPI1 ((SPI_Def_t *)SPI1_BASE_ADDR)
+
+/*	------------ EXTI APB2 ---------------- */
+typedef struct {
+	__vo uint32_t	CR;
+	__vo uint32_t 	PLLCFGR;
+	__vo uint32_t 	CFGR;
+	__vo uint32_t 	CIR;
+
+	__vo uint32_t	AHB1RSTR;
+	__vo uint32_t   AHB2RSTR;
+
+	uint32_t RESERVED_0;
+	uint32_t RESERVED_1;
+
+	__vo uint32_t	APB1RSTR;
+	__vo uint32_t	APB2RSTR;
+
+	uint32_t RESERVED_2;
+	uint32_t RESERVED_3;
+
+	__vo uint32_t	AHB1ENR;
+	__vo uint32_t	AHB2ENR;
+
+	uint32_t RESERVED_4;
+	uint32_t RESERVED_5;
+
+	__vo uint32_t	APB1ENR;
+	__vo uint32_t	APB2ENR;
+
+	uint32_t RESERVED_6;
+	uint32_t RESERVED_7;
+
+	__vo uint32_t	AHB1LPENR;
+	__vo uint32_t	AHB2LPENR;
+
+	uint32_t RESERVED_8;
+	uint32_t RESERVED_9;
+
+	__vo uint32_t	APB1LPENR;
+	__vo uint32_t	APB2LPENR;
+
+	uint32_t RESERVED_10;
+	uint32_t RESERVED_11;
+
+	__vo uint32_t	BDCR;
+	__vo uint32_t	CSR;
+
+	uint32_t RESERVED_12;
+	uint32_t RESERVED_13;
+
+	__vo uint32_t	SSCGR;
+	__vo uint32_t	PLLI2SCFGR;
+	__vo uint32_t	DCKCFGR;
+}EXTI_Def_t;
+
+#define EXTI ((EXTI_Def_t *)EXTI_BASE_ADDR)
+
+/*	------------ SYSTEM CONFIG APB2 ---------------- */
+typedef struct {
+	__vo uint32_t 	MEMRMP;
+	__vo uint32_t	PMC;
+
+	__vo uint32_t	EXTICR1;
+	__vo uint32_t	EXTICR2;
+	__vo uint32_t	EXTICR3;
+	__vo uint32_t	EXTICR4;
+
+	__vo uint32_t	CMPCR;
+}SYSCFG_Def_t;
+
+#define SYSCFG ((SYSCFG_Def_t *)SYSCFG_BASE_ADDR)
+
 #endif
