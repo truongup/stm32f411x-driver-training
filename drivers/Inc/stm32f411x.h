@@ -71,7 +71,6 @@ typedef struct {
 	__vo uint32_t AFR[2];			// alternate function low / high register
 }GPIO_Def_t;
 
-
 #define GPIOA   ((GPIO_Def_t *)GPIOA_BASE_ADDR)
 #define GPIOB   ((GPIO_Def_t *)GPIOB_BASE_ADDR)
 #define GPIOC   ((GPIO_Def_t *)GPIOC_BASE_ADDR)
@@ -137,5 +136,54 @@ typedef struct {
 
 #define RCC ((RCC_Def_t *) RCC_BASE_ADDR)
 
+/*	------------ GENERAL PURPOSE TIMER (TIME2 to TIME5) APB1 ---------------- */
+typedef struct {
+	__vo uint32_t CR1;
+	__vo uint32_t CR2;
+	__vo uint32_t SMCR;
+	__vo uint32_t DIER;
+	__vo uint32_t SR;
+	__vo uint32_t EGR;
+	__vo uint32_t CCMR1;
+	__vo uint32_t CCMR2;
+
+	__vo uint32_t CCER;
+	__vo uint32_t CNT;
+	__vo uint32_t PSC;
+
+	__vo uint32_t ARR;
+
+	uint32_t RESERVED_0;
+
+	__vo uint32_t CCR1;
+	__vo uint32_t CCR2;
+	__vo uint32_t CCR3;
+	__vo uint32_t CCR4;
+
+	uint32_t RESERVED_1;
+
+	__vo uint32_t DCR;
+	__vo uint32_t DMAR;
+	__vo uint32_t TIM2_OR;
+	__vo uint32_t TIM5_OR;
+}TIM_BaseDef_t;
+
+#define TIM2 ((TIM_BaseDef_t *)TIM2_BASE_ADDR)
+#define TIM3 ((TIM_BaseDef_t *)TIM3_BASE_ADDR)
+
+/*	------------ USART APB1 and APB2 ---------------- */
+typedef struct {
+	__vo uint32_t CR;
+	__vo uint32_t DR;
+	__vo uint32_t BRR;
+
+	__vo uint32_t CR1;
+	__vo uint32_t CR2;
+	__vo uint32_t CR3;
+	__vo uint32_t GTPR;
+}USART_Def_t;
+
+#define USART1 ((USART_Def_t *)USART1_BASE_ADDR)	/*	APB2	*/
+#define USART2 ((USART_Def_t *)USART2_BASE_ADDR)	/*	APB1	*/
 
 #endif
