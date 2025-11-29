@@ -304,7 +304,7 @@ typedef struct {
 #define GPIOE_PCLK_EN()		(RCC -> AHB1ENR |= (1 << 4))
 #define GPIOH_PCLK_EN()		(RCC -> AHB1ENR |= (1 << 7))
 
-/*	------------ Disable Clock ---------------- */
+/*	------------ Disable Clock GPIO ---------------- */
 #define GPIOA_PCLK_DI()		(RCC -> AHB1ENR &= ~(1 << 0))
 #define GPIOB_PCLK_DI()		(RCC -> AHB1ENR &= ~(1 << 1))
 #define GPIOC_PCLK_DI()		(RCC -> AHB1ENR &= ~(1 << 2))
@@ -312,4 +312,30 @@ typedef struct {
 #define GPIOE_PCLK_DI()		(RCC -> AHB1ENR &= ~(1 << 4))
 #define GPIOH_PCLK_DI()		(RCC -> AHB1ENR &= ~(1 << 7))
 
+/*	------------ Enable & Disable Clock TIMER 2 & 3 (Flip Flop) ---------------- */
+#define TIM2_PCLK_EN()		(RCC -> APB1ENR |= (1 << 0))
+#define TIM3_PCLK_EN()		(RCC -> APB1ENR |= (1 << 1))
+
+#define TIM2_PCLK_EN()		(RCC -> APB1ENR &= ~(1 << 0))
+#define TIM3_PCLK_EN()		(RCC -> APB1ENR &= ~(1 << 1))
+
+/*	------------ Enable & Disable Clock USART1 (Flip Flop) ---------------- */
+#define USART1_PCLK_EN()	(RCC -> APB2ENR |= (1 << 4))
+#define USART1_PCLK_DI()	(RCC -> APB2ENR &= ~(1 << 4))
+
+/*	------------ Enable & Disable Clock USART2 (Flip Flop) ---------------- */
+#define USART2_PCLK_EN()	(RCC -> APB1ENR |= (1 << 17))
+#define USART2_PCLK_DI()	(RCC -> APB1ENR &= ~(1 << 17))
+
+/*	------------ Enable & Disable Clock I2C1 (Flip Flop) ---------------- */
+#define I2C1_PCLK_EN()	(RCC -> APB1ENR |= (1 << 21))
+#define I2C1_PCLK_DI()	(RCC -> APB1ENR &= ~(1 << 21))
+
+/*	------------ Enable & Disable Clock SPI1 (Flip Flop) ---------------- */
+#define SPI1_PCLK_EN()	(RCC -> APB2ENR |= (1 << 12))
+#define SPI1_PCLK_DI()	(RCC -> APB2ENR &= ~(1 << 12))
+
+/*	------------ Enable & Disable Clock SYSCFG (Flip Flop) ---------------- */
+#define SYSCFG_PCLK_EN()	(RCC -> APB2ENR |= (1 << 14))
+#define SYSCFG_PCLK_DI()	(RCC -> APB2ENR &= ~(1 << 14))
 #endif
