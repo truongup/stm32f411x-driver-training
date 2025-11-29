@@ -186,4 +186,41 @@ typedef struct {
 #define USART1 ((USART_Def_t *)USART1_BASE_ADDR)	/*	APB2	*/
 #define USART2 ((USART_Def_t *)USART2_BASE_ADDR)	/*	APB1	*/
 
+/*	------------ I2C APB1 ---------------- */
+typedef struct {
+	__vo uint32_t CR1;
+	__vo uint32_t CR2;
+
+	__vo uint32_t OAR1;
+	__vo uint32_t OAR2;
+
+	__vo uint32_t DR;
+	__vo uint32_t SR1;
+	__vo uint32_t SR2;
+
+	__vo uint32_t CCR;
+	__vo uint32_t TRISE;
+	__vo uint32_t FLTR;
+}I2C_Def_t;
+
+#define I2C1 ((I2C_Def_t *)I2C1_BASE_ADDR)
+
+/*	------------ I2C APB2 ---------------- */
+typedef struct {
+	__vo uint32_t CR1;
+	__vo uint32_t CR2;
+
+	__vo uint32_t SR;
+	__vo uint32_t DR;
+
+	__vo uint32_t CRCPR;
+
+	__vo uint32_t RXCRCR;
+	__vo uint32_t TXCRCR;
+
+	__vo uint32_t I2SCFGR;
+	__vo uint32_t I2SPR;
+}SPI_Def_t;
+
+#define SPI1 ((SPI_Def_t *)SPI1_BASE_ADDR)
 #endif
