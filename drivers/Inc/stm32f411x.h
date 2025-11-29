@@ -295,4 +295,21 @@ typedef struct {
 
 #define SYSCFG ((SYSCFG_Def_t *)SYSCFG_BASE_ADDR)
 
+/*	------------ Enable Clock GPIO (Flip Flop) ---------------- */
+//	RCC AHB1 peripheral clock enable register
+#define GPIOA_PCLK_EN()		(RCC -> AHB1ENR |= (1 << 0))
+#define GPIOB_PCLK_EN()		(RCC -> AHB1ENR |= (1 << 1))
+#define GPIOC_PCLK_EN()		(RCC -> AHB1ENR |= (1 << 2))
+#define GPIOD_PCLK_EN()		(RCC -> AHB1ENR |= (1 << 3))
+#define GPIOE_PCLK_EN()		(RCC -> AHB1ENR |= (1 << 4))
+#define GPIOH_PCLK_EN()		(RCC -> AHB1ENR |= (1 << 7))
+
+/*	------------ Disable Clock ---------------- */
+#define GPIOA_PCLK_DI()		(RCC -> AHB1ENR &= ~(1 << 0))
+#define GPIOB_PCLK_DI()		(RCC -> AHB1ENR &= ~(1 << 1))
+#define GPIOC_PCLK_DI()		(RCC -> AHB1ENR &= ~(1 << 2))
+#define GPIOD_PCLK_DI()		(RCC -> AHB1ENR &= ~(1 << 3))
+#define GPIOE_PCLK_DI()		(RCC -> AHB1ENR &= ~(1 << 4))
+#define GPIOH_PCLK_DI()		(RCC -> AHB1ENR &= ~(1 << 7))
+
 #endif
